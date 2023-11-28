@@ -7,7 +7,7 @@ public class TESTFlavienScript : MonoBehaviour
 
     public GameObject equipe1;
     private bool stopTest;
-
+    public GameObject Light;
     void Update()
     {
   
@@ -16,6 +16,7 @@ public class TESTFlavienScript : MonoBehaviour
             stopTest = true;
             equipe1.SetActive(true);
             StartCoroutine(Cooldown());
+
         }
         
     }
