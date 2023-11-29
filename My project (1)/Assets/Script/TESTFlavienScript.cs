@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TESTFlavienScript : MonoBehaviour
 {
-
+    //public GameObject[] equipe;
     public GameObject equipe1;
     private float vote1;
     public GameObject equipe2;
