@@ -8,7 +8,7 @@ public class ChangeScene : MonoBehaviour
     public int up;
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             SceneManager.LoadScene(up);
         }
