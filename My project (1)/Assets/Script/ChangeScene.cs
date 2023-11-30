@@ -8,6 +8,7 @@ public class ChangeScene : MonoBehaviour
     public GameObject[] Question;
     public GameObject ProQuestions;
     private bool stopTest;
+    public int QuestionNumber;
 
     public void Update()
     {
@@ -16,8 +17,9 @@ public class ChangeScene : MonoBehaviour
             StartCoroutine(Cooldown());
             stopTest = true;
             ProQuestions.SetActive(true);
-
-            Question[1].SetActive(true);
+            Question[QuestionNumber].SetActive(false);
+            QuestionNumber = QuestionNumber + 1;
+            Question[QuestionNumber].SetActive(true);
         }
     }
 
