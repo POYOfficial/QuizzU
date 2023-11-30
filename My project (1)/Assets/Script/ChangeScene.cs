@@ -5,12 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public int up;
+    public GameObject[] Question;
+    public GameObject ProQuestions;
+    private bool stopTest;
+
     public void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && !stopTest )
         {
-            SceneManager.LoadScene(up);
+            StartCoroutine(Cooldown());
+            stopTest = true;
+            ProQuestions.SetActive(true);
+
+            Question[1].SetActive(true);
         }
+    }
+
+    IEnumerator Cooldown()
+    {
+            yield return new WaitForSeconds(2f);
+        ProQuestions.SetActive(false);
+        stopTest = false;
+            
+        
+
     }
 }
