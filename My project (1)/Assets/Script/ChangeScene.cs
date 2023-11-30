@@ -19,7 +19,7 @@ public class ChangeScene : MonoBehaviour
             ProQuestions.SetActive(true);
             Question[QuestionNumber].SetActive(false);
             QuestionNumber = QuestionNumber + 1;
-            Question[QuestionNumber].SetActive(true);
+            
         }
     }
 
@@ -28,7 +28,7 @@ public class ChangeScene : MonoBehaviour
             yield return new WaitForSeconds(2f);
         ProQuestions.SetActive(false);
         stopTest = false;
-            
+        Question[QuestionNumber].SetActive(true);    
         
 
     }
