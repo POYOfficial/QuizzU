@@ -2,43 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     [Header("Component")]
-    public TextMeshProUGUI timerText;
+    public Slider slider;
 
     [Header("Timer Settings")]
     public float currentTime;
-    public bool countDown;
+    public float timeMax;
 
     [Header("Limit Settings")]
     public bool hasLimit;
     public float timerLimit;
-    // Start is called before the first frame update
+
     void Start()
     {
-
+        timeMax = currentTime;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        currentTime = countDown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
+        slider.value = currentTime / timeMax;
 
-        if (hasLimit && ((countDown && currentTime <= timerLimit) || (!countDown && currentTime >= timerLimit)))
+        
+
+        if(currentTime >= 0)
         {
-            currentTime = timerLimit;
-            SetTimerText();
-            timerText.color = Color.red;
-            enabled = false;
+            currentTime -= Time.deltaTime;
+
         }
 
-        SetTimerText();
+        if(Input.GetKey(KeyCode.RightArrow))
+        {
+            currentTime = timeMax;
+        }
     }
-
-    private void SetTimerText()
-        {
-            timerText.text = currentTime.ToString("0.00");
-        }
+    
 }
