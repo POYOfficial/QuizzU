@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -166,6 +167,24 @@ public class TESTFlavienScript : MonoBehaviour
             StartCoroutine(Cooldown());
             vote14 = 1;
 
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            Reset();
+            equipe1.SetActive(false);
+            equipe2.SetActive(false);
+            equipe3.SetActive(false);
+            equipe4.SetActive(false);
+            equipe5.SetActive(false);
+            equipe6.SetActive(false);
+            equipe7.SetActive(false);
+            equipe8.SetActive(false);
+            equipe9.SetActive(false);
+            equipe10.SetActive(false);
+            equipe11.SetActive(false);
+            equipe12.SetActive(false);
+            equipe13.SetActive(false);
+            equipe14.SetActive(false);
         }
 
 
